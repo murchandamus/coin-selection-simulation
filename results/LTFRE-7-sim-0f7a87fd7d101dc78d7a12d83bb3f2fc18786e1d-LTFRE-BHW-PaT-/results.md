@@ -1,0 +1,12 @@
+bustabit-tiny-hot-wallet_peak-and-tail
+
+| Scenario File | Current Balance | Mean #UTXO | Current #UTXO | #Deposits | #Inputs Spent | #Withdraws | #Uneconomical outputs spent | #Change Created | #Changeless | Min Change Value | Max Change Value | Mean Change Value | Std. Dev. of Change Value | Total Fees | Mean Fees per Withdraw | Cost to Empty (10 sat/vB) | Total Cost | Min Input Size | Max Input Size | Mean Input Size | Std. Dev. of Input Size | Usage |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| bustabit-tiny-hot-wallet_peak-and-tail | 15.02998269 | 36.6706451827 | 25 | 10076 | 14399 | 5005 | 7 | 4348 | bnb: **602** ; knapsack: **55** ; Total: **657** | 0.00000366 | 9.93471406 | 0.273384677794 | 0.946746831312 | 0.10503418 | 0.0000209858501499 | 0.000170000000 | 0.105204180000 | 1 | 36 | 2.87692307692 | 3.40117369992 | knapsack: **3375** ; srd: **1028** ; bnb: **602** |
+| bustabit-tiny-hot-wallet_peak-and-tail | 15.03048069 | 36.6872223327 | 21 | 10076 | 14430 | 5005 | 6 | 4375 | bnb: **584** ; knapsack: **46** ; Total: **630** | 0.00000317 | 9.98895496 | 0.282048136258 | 0.938442509920 | 0.10453618 | 0.0000208863496503 | 0.000142800000 | 0.104678980000 | 1 | 44 | 2.88311688312 | 3.41859258396 | knapsack: **3386** ; srd: **1035** ; bnb: **584** |
+| bustabit-tiny-hot-wallet_peak-and-tail | 15.02950580 | 34.9297128838 | 25 | 10076 | 14415 | 5005 | 6 | 4364 | bnb: **588** ; knapsack: **53** ; Total: **641** | 0.00000317 | 9.94204440 | 0.282516722582 | 0.955172062794 | 0.10551107 | 0.0000210811328671 | 0.000170000000 | 0.105681070000 | 1 | 62 | 2.88011988012 | 3.45086765836 | knapsack: **3399** ; srd: **1018** ; bnb: **588** |
+| bustabit-tiny-hot-wallet_peak-and-tail | 15.03065499 | 36.9092235263 | 24 | 10076 | 14404 | 5005 | 7 | 4352 | bnb: **606** ; knapsack: **47** ; Total: **653** | 0.00000317 | 9.98498989 | 0.293539142976 | 1.03125991735 | 0.10436188 | 0.0000208515244755 | 0.000163200000 | 0.104525080000 | 1 | 44 | 2.87792207792 | 3.43014130648 | knapsack: **3363** ; srd: **1036** ; bnb: **606** |
+| bustabit-tiny-hot-wallet_peak-and-tail | 15.03048685 | 36.1574166169 | 24 | 10076 | 14405 | 5005 | 8 | 4353 | bnb: **609** ; knapsack: **43** ; Total: **652** | 0.00000337 | 9.97040569 | 0.269325891038 | 0.903723985701 | 0.10453002 | 0.0000208851188811 | 0.000163200000 | 0.104693220000 | 1 | 37 | 2.87812187812 | 3.41745339090 | knapsack: **3345** ; srd: **1051** ; bnb: **609** |
+
+
+
