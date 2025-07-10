@@ -166,6 +166,11 @@ class Simulation:
             action=PaymentsFeeratesOptionsAction,
             help="Path to a feerates file consisting of one feerate per line in BTC/kvb"
         )
+        parser.add_argument(
+            "--initpool",
+            default=None,
+            help="Path to an initial UTXO pool file consisting of one positive amount per line in BTC that will be deposited into the test wallet before the scenario is simulated."
+        )
         parser.add_argument("--ops", type=int, default=None, help="Maximum number of deposits and withdrawal actions to do, default is all payments in the scenario or payments file")
         parser.add_argument(
             "--weights",

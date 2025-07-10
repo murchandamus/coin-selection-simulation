@@ -248,6 +248,31 @@ class CoinSelectionSimulation(Simulation):
             ]
             scenario_data = zip(scenario_files[0], cycle(scenario_files[1]))
 
+        self.initializing = False
+        if self.options.initpool:
+            initpool_name = f"{os.path.splitext(os.path.basename(self.options.initpool))[0]}"
+            self.scenario_name = f"{initpool_name}+{self.scenario_name}"
+
+            def init_utxo_pool(file):
+                self.initializing = True
+                min_feerate = "0.00001000"
+                for line in file:
+                    val_str = line.strip()
+                    if Decimal(val_str) >= 0:
+                        yield val_str, min_feerate
+                self.initializing = False
+
+            pool_file = open(self.options.initpool, "r")
+            pool_data = init_utxo_pool(pool_file)
+            
+            def concat(a, b):
+                yield from a
+                yield from b
+
+            combined_data = concat(pool_data, scenario_data)
+            scenario_data = combined_data
+
+
         self.scenario_path = self.options.scenario
 
         # Make an output folder
@@ -410,7 +435,7 @@ class CoinSelectionSimulation(Simulation):
             for val_str, fee_str in scenario_data:
                 if self.options.ops and self.ops > self.options.ops:
                     break
-                if self.ops % 500 == 0:
+                if not self.initializing and self.ops % 500 == 0:
                     self.log.info(f"{self.ops} operations performed so far")
                     self.log_sim_results(res, sum_csvw)
 
@@ -578,7 +603,8 @@ class CoinSelectionSimulation(Simulation):
                         )
                 self.utxo_set_sizes.append(len(self.tester.listunspent(0)))
                 self.funder.generatetoaddress(1, gen_addr)
-                self.ops += 1
+                if not self.initializing:
+                    self.ops += 1
 
             for f in scenario_files:
                 f.close()
